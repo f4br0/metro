@@ -8,3 +8,6 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+
+export const ERROR_MESSAGE =
+  'Se ha presentado un inconveniente, por favor intente mas tarde';

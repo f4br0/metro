@@ -12,21 +12,21 @@ const validate = values => {
   // IMPORTANT: values is an Immutable.Map here!
   const errors = {};
   if (!values.get('origen')) {
-    errors.origen = 'Required'
+    errors.origen = 'Required';
   } else if (!estacionValida(values.get('origen'))) {
-    errors.origen = 'estacion no valida'
+    errors.origen = 'estacion no valida';
   }
   if (!values.get('destino')) {
-    errors.destino = 'Required'
+    errors.destino = 'Required';
   } else if (!estacionValida(values.get('destino'))) {
-    errors.destino = 'estacion no valida'
+    errors.destino = 'estacion no valida';
   }
 
-  return errors
-}
+  return errors;
+};
 
 const RutaForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit(props.onSubmit)}>
       <Field
@@ -52,11 +52,15 @@ const RutaForm = props => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
 RutaForm.propTypes = {
   handleSubmit: PropTypes.func,
+  pristine: PropTypes.any,
+  onSubmit: PropTypes.func,
+  reset: PropTypes.func,
+  submitting: PropTypes.any,
 };
 
 export default reduxForm({

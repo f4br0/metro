@@ -8,16 +8,16 @@ export const renderField = ({
   type,
   meta: { touched, error, warning },
 }) => (
+  <div>
+    {label}
     <div>
-      {label}
-      <div>
-        <input {...input} type={type} placeholder={label} />
-        {touched &&
-          ((error && <span>{error}</span>) ||
-            (warning && <span>{warning}</span>))}
-      </div>
+      <input {...input} type={type} placeholder={label} />
+      {touched &&
+        ((error && <span>{error}</span>) ||
+          (warning && <span>{warning}</span>))}
     </div>
-  );
+  </div>
+);
 
 renderField.propTypes = {
   input: PropTypes.object,
@@ -81,7 +81,6 @@ LoginForm.propTypes = {
   reset: PropTypes.func,
   submitting: PropTypes.any,
 };
-
 
 export default reduxForm({
   // a unique name for the form

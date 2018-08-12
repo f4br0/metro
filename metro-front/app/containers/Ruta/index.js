@@ -42,7 +42,9 @@ export class Ruta extends React.Component {
     );
     return (
       <div>
-        {this.props.login.admin && <button onClick={this.props.irHistorial}>Ir historial</button>}
+        {this.props.login.admin && (
+          <button onClick={this.props.irHistorial}>Ir historial</button>
+        )}
         <button onClick={this.props.salir}>Salir</button>
         <h3>Mapa metro</h3>
         <Img src={Banner} alt="react-boilerplate - Logo" />
@@ -59,6 +61,8 @@ Ruta.propTypes = {
   login: PropTypes.object,
   ruta: PropTypes.object,
   salir: PropTypes.func,
+  irHistorial: PropTypes.func,
+  limpiar: PropTypes.func,
   calcular: PropTypes.func,
 };
 

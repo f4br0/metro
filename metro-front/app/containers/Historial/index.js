@@ -49,6 +49,8 @@ Historial.propTypes = {
   historial: PropTypes.object,
   login: PropTypes.object,
   init: PropTypes.func,
+  salir: PropTypes.func,
+  regresar: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({

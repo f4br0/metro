@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { reset } from 'redux-form/immutable';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -36,14 +35,14 @@ export class Login extends React.Component {
 }
 
 Login.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
+  login: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
   login: makeSelectLogin(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     login: body => dispatch({ type: 'LOGIN', body }),
   };

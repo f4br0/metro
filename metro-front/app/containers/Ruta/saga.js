@@ -21,7 +21,6 @@ export function* ruta(req) {
       },
       body: JSON.stringify({ ...req.body }),
     });
-    console.log(response);
     yield put({ type: 'SAVE_DETALLE', value: response });
   } catch (err) {
     yield put({ type: 'SAVE_DETALLE', value: ERROR_MESSAGE });

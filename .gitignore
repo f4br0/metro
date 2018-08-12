@@ -1,6 +1,7 @@
 # Don't check auto-generated stuff into git
 coverage
 build
+out
 node_modules
 stats.json
 

@@ -82,9 +82,9 @@ public class MetroBusinessBean implements MetroBusiness {
                         .reversed()).forEachOrdered(e -> finalMap.put(e.getKey(), e.getValue()));
         List<ConsultaHistorialDto> historial = new ArrayList<>();
 
-        finalMap.entrySet().stream().forEach(h -> {
-            historial.add(new ConsultaHistorialDto(h.getKey(), h.getValue()));
-        });
+        finalMap.entrySet().stream().forEach(h ->
+                historial.add(new ConsultaHistorialDto(h.getKey(), h.getValue()))
+        );
         return historial;
     }
 

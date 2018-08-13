@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RutaOptimaResponseDto {
     private String detalle;
-    private int timpoEstimado;
+    private int tiempoEstimado;
 
 }
 

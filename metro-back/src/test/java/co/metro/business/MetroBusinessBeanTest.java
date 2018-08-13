@@ -1,9 +1,6 @@
 package co.metro.business;
 
-import co.metro.dto.ConsultaHistorialDto;
-import co.metro.dto.LoginRequestDto;
-import co.metro.dto.RutaOptimaRequestDto;
-import co.metro.dto.RutaOptimaResponseDto;
+import co.metro.dto.*;
 import co.metro.model.Historial;
 import co.metro.model.User;
 import co.metro.repository.HistorialRepository;
@@ -28,16 +25,19 @@ public class MetroBusinessBeanTest {
     private HistorialRepository historialRepository;
     @Mock
     private UserRepository userRepository;
+    @Mock
+    private MapaMetroDto mapaMetro;
 
     @Test
     public void calcularRutaOptima() {
         Mockito.when(historialRepository.save(Mockito.any())).thenReturn(new Historial());
+        Mockito.when(mapaMetro.getMapa()).thenReturn(new MapaMetroDto().getMapa());
         RutaOptimaRequestDto req = new RutaOptimaRequestDto();
         req.setOrigen("1");
         req.setDestino("10");
         RutaOptimaResponseDto result = metroBusinessBean.calcularRutaOptima(req).get(0);
-        Assert.assertEquals("Opcion 1 -> RUTA_B: 1 2 11  + RUTA_D: 7 8 9 10", result.getDetalle());
-        Assert.assertEquals(26, result.getTimpoEstimado());
+        Assert.assertEquals("Opcion 1 -> RUTA_B: 1 2 11 + RUTA_D: 11 7 8 9 10", result.getDetalle());
+        Assert.assertEquals(26, result.getTiempoEstimado());
     }
 
     @Test

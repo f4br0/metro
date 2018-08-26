@@ -1,4 +1,4 @@
-package co.metro.enums;
+package co.metro.business;
 
 import lombok.Getter;
 

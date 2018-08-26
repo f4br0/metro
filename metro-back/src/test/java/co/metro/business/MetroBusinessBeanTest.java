@@ -2,7 +2,6 @@ package co.metro.business;
 
 import co.metro.dto.*;
 import co.metro.model.Historial;
-import co.metro.model.User;
 import co.metro.repository.HistorialRepository;
 import co.metro.repository.UserRepository;
 import org.junit.Assert;
@@ -57,8 +56,8 @@ public class MetroBusinessBeanTest {
 
     @Test
     public void login() {
-        Mockito.when(userRepository.findOneByUsuarioAndClave(Mockito.any(), Mockito.any()))
-                .thenReturn(new User());
+//        Mockito.when(userRepository.findOneByUsuarioAndClave(Mockito.any(), Mockito.any()))
+//                .thenReturn(new User());
         LoginRequestDto request = new LoginRequestDto("admin", "admin");
         Assert.assertEquals(true, metroBusinessBean.login(request));
     }
